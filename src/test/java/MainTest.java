@@ -4,6 +4,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+    @Test
+    void tryParseInt1() {
+        assertTrue(Main.isInteger('0'));
+    }
+
+    @Test
+    void tryParseInt2() {
+        assertFalse(Main.isInteger('a'));
+    }
 
     @Test
     void validateStringValid1() {

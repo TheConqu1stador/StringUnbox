@@ -37,7 +37,7 @@ public class Main {
         return false;
     }
 
-    private static boolean isInteger(char input) {
+    public static boolean isInteger(char input) {
         try {
             Integer.parseInt(String.valueOf(input));
             return true;
