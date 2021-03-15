@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     @Test
-    void tryParseInt1() {
+    void tryParseIntValid() {
         assertTrue(Main.isInteger('0'));
     }
 
     @Test
-    void tryParseInt2() {
+    void tryParseIntBadSymbol() {
         assertFalse(Main.isInteger('a'));
     }
 
