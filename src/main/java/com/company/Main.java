@@ -30,6 +30,7 @@ public class Main {
                 //brackets balance
                 if (str.charAt(i) == '[') brackets++;
                 if (str.charAt(i) == ']') brackets--;
+                if (brackets < 0) break;
             }
             return validFlag == 0 && brackets == 0;
         }

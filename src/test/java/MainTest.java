@@ -57,6 +57,12 @@ class MainTest {
     }
 
     @Test
+    void validateStringWrongBracketsBalance() {
+        String str = "3[xyz]4[xy]z][";
+        assertFalse(Main.validateString(str));
+    }
+
+    @Test
     void validateStringNumberWithoutBrackets() {
         String str = "3[xyz]4[xy]z3fff";
         assertFalse(Main.validateString(str));
