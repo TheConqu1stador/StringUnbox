@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    97,1%
+    97,2%
   </span>
   <span class="absValue">
-    (34/ 35)
+    (35/ 36)
   </span>
 </td>
 </tr>
@@ -104,50 +104,51 @@
 <i>30</i>&nbsp;                //brackets balance
 <b class="fc"><i>31</i>&nbsp;                if (str.charAt(i) == &#39;[&#39;) brackets++;</b>
 <b class="fc"><i>32</i>&nbsp;                if (str.charAt(i) == &#39;]&#39;) brackets--;</b>
-<i>33</i>&nbsp;            }
-<b class="fc"><i>34</i>&nbsp;            return validFlag == 0 &amp;&amp; brackets == 0;</b>
-<i>35</i>&nbsp;        }
-<i>36</i>&nbsp;
-<b class="fc"><i>37</i>&nbsp;        return false;</b>
-<i>38</i>&nbsp;    }
-<i>39</i>&nbsp;
-<i>40</i>&nbsp;    public static boolean isInteger(char input) {
-<i>41</i>&nbsp;        try {
-<b class="fc"><i>42</i>&nbsp;            Integer.parseInt(String.valueOf(input));</b>
-<b class="fc"><i>43</i>&nbsp;            return true;</b>
-<i>44</i>&nbsp;        }
-<b class="fc"><i>45</i>&nbsp;        catch (Exception e) {</b>
-<b class="fc"><i>46</i>&nbsp;            return false;</b>
-<i>47</i>&nbsp;        }
-<i>48</i>&nbsp;    }
-<i>49</i>&nbsp;
-<i>50</i>&nbsp;    public static String unboxString(String str) {
-<b class="fc"><i>51</i>&nbsp;        Pattern groupPattern = Pattern.compile(&quot;(?&lt;MUL&gt;\\d+)\\[(?&lt;BODY&gt;[a-zA-Z]*)\\]&quot;);</b>
-<b class="fc"><i>52</i>&nbsp;        Matcher groupPatternMatcher = groupPattern.matcher(str);</b>
-<b class="fc"><i>53</i>&nbsp;        StringBuffer buffer = new StringBuffer();</b>
-<i>54</i>&nbsp;
-<b class="fc"><i>55</i>&nbsp;        while (groupPatternMatcher.find()) {</b>
-<b class="fc"><i>56</i>&nbsp;            String newString = groupPatternMatcher.group(&quot;BODY&quot;) +</b>
-<b class="fc"><i>57</i>&nbsp;                    String.valueOf(groupPatternMatcher.group(&quot;BODY&quot;))</b>
-<b class="fc"><i>58</i>&nbsp;                            .repeat(Math.max(0, Integer.parseInt(groupPatternMatcher.group(&quot;MUL&quot;)) - 1));</b>
-<i>59</i>&nbsp;
-<b class="fc"><i>60</i>&nbsp;            groupPatternMatcher.appendReplacement(buffer, newString);</b>
-<i>61</i>&nbsp;
-<b class="fc"><i>62</i>&nbsp;            groupPatternMatcher.appendTail(buffer);</b>
-<b class="fc"><i>63</i>&nbsp;            str = buffer.toString();</b>
-<b class="fc"><i>64</i>&nbsp;            buffer.setLength(0);</b>
-<b class="fc"><i>65</i>&nbsp;            groupPatternMatcher = groupPattern.matcher(str);</b>
-<b class="fc"><i>66</i>&nbsp;        }</b>
-<i>67</i>&nbsp;
-<b class="fc"><i>68</i>&nbsp;        return str;</b>
-<i>69</i>&nbsp;    }
-<i>70</i>&nbsp;}
+<b class="fc"><i>33</i>&nbsp;                if (brackets &lt; 0) break;</b>
+<i>34</i>&nbsp;            }
+<b class="fc"><i>35</i>&nbsp;            return validFlag == 0 &amp;&amp; brackets == 0;</b>
+<i>36</i>&nbsp;        }
+<i>37</i>&nbsp;
+<b class="fc"><i>38</i>&nbsp;        return false;</b>
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public static boolean isInteger(char input) {
+<i>42</i>&nbsp;        try {
+<b class="fc"><i>43</i>&nbsp;            Integer.parseInt(String.valueOf(input));</b>
+<b class="fc"><i>44</i>&nbsp;            return true;</b>
+<i>45</i>&nbsp;        }
+<b class="fc"><i>46</i>&nbsp;        catch (Exception e) {</b>
+<b class="fc"><i>47</i>&nbsp;            return false;</b>
+<i>48</i>&nbsp;        }
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    public static String unboxString(String str) {
+<b class="fc"><i>52</i>&nbsp;        Pattern groupPattern = Pattern.compile(&quot;(?&lt;MUL&gt;\\d+)\\[(?&lt;BODY&gt;[a-zA-Z]*)\\]&quot;);</b>
+<b class="fc"><i>53</i>&nbsp;        Matcher groupPatternMatcher = groupPattern.matcher(str);</b>
+<b class="fc"><i>54</i>&nbsp;        StringBuffer buffer = new StringBuffer();</b>
+<i>55</i>&nbsp;
+<b class="fc"><i>56</i>&nbsp;        while (groupPatternMatcher.find()) {</b>
+<b class="fc"><i>57</i>&nbsp;            String newString = groupPatternMatcher.group(&quot;BODY&quot;) +</b>
+<b class="fc"><i>58</i>&nbsp;                    String.valueOf(groupPatternMatcher.group(&quot;BODY&quot;))</b>
+<b class="fc"><i>59</i>&nbsp;                            .repeat(Math.max(0, Integer.parseInt(groupPatternMatcher.group(&quot;MUL&quot;)) - 1));</b>
+<i>60</i>&nbsp;
+<b class="fc"><i>61</i>&nbsp;            groupPatternMatcher.appendReplacement(buffer, newString);</b>
+<i>62</i>&nbsp;
+<b class="fc"><i>63</i>&nbsp;            groupPatternMatcher.appendTail(buffer);</b>
+<b class="fc"><i>64</i>&nbsp;            str = buffer.toString();</b>
+<b class="fc"><i>65</i>&nbsp;            buffer.setLength(0);</b>
+<b class="fc"><i>66</i>&nbsp;            groupPatternMatcher = groupPattern.matcher(str);</b>
+<b class="fc"><i>67</i>&nbsp;        }</b>
+<i>68</i>&nbsp;
+<b class="fc"><i>69</i>&nbsp;        return str;</b>
+<i>70</i>&nbsp;    }
+<i>71</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2021-03-15 23:42</div>
+    <div style="float:right;">generated on 2021-03-16 13:39</div>
 </div>
 </body>
 </html>
